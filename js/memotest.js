@@ -127,8 +127,8 @@ jQuery.fn.memotest = function(_carta_oculta, _cartas) {
                 changeLifes(intentos);
                 if(intentos < 1){
                     window.setTimeout(function() {
-                        //change_page('loose_page');
-                        change_page('win_page');
+                        change_page('loose_page');
+                        //change_page('win_page');
                         //_this.jugar(true);
                     }, 500);
                 }
