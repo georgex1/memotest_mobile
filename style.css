@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1em;
+    font-family: "Helvetica", sans-serif;
+    outline: none;
+}
+
+a{
+    cursor: pointer;
+}
+
+body{
+    background: url(images/Memotest-Fondo2.jpg);
+    background-size: 100% 100%;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#home{
+    width: 100%;
+    height: 100%;
+    background: url(images/Memotest-Fondo1.jpg);
+    background-size: 100% 100%;
+}
+
+#jugar_boton{
+    display: block;
+    width: 12%;
+    position: absolute;
+    bottom: 4%;
+    left: 4%;
+}
+
+#jugar_boton img{
+    width: 100%;
+}
+
+.page{
+    width: 100%;
+    height: 100%;
+}
+#info_page{
+    
+}
+
+#info_page .container{
+    width: 96%;
+    margin: auto;
+    height: 100%;
+    background: url(images/explicacion.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.pg{
+    display: block;
+    width: 9%;
+    padding: 1.5% 0;
+    margin: auto;
+}
+
+.pg img{
+    width: 100%;
+}
+
+#info_page_bottom{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+#info_page_bottom p{
+    width: 67%;
+    margin-left: 3%;
+    float: left;
+    margin-top: 1%;
+}
+#info_page_bottom p img{
+    width: 100%;
+}
+
+#info_page_bottom a{
+    display: block;
+    width: 20%;
+    margin-right: 5%;
+    float: right;
+}
+#info_page_bottom a img{
+    width: 100%;
+}
+
+#game_page{
+    
+}
+
+#vidas{
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    width: 20%;
+    height: 18%;
+    background: url(images/vidas_bck.png) no-repeat;
+    background-size: 100% auto;
+    overflow: hidden;
+}
+
+#vidas p{
+    margin-left: 7%;
+    margin-top: 6%;
+    font-size: 1.6em;
+    color: white;
+    text-shadow: 3px 3px 3px rgba(000, 000, 000, 1);
+    width: 66%;
+    float: left;
+}
+
+#vidas #vidas_img{
+    width: 24%;
+    float: left;
+    display: block;
+    margin-top: 3%;
+}
+
+#vidas #vidas_img img{
+    width: 40%;
+    display: block;
+    float: left;
+    margin-right: 10%;
+}
+
+/*memo test*/
+#mesa {
+    width: 88%;
+    margin: auto;
+}
+#mesa .memotest_cartas {
+    list-style: none;
+    float: left;
+    /*margin: 0px 20px 20px 0px;
+    border: solid 1px #999;*/
+    width: 16%;
+    /*height: 60px;*/
+    display: block;
+    cursor: pointer;
+}
+
+#mesa .memotest_cartas img{
+    width: 100%;
+}
+
+#mesa .memotest_fin_juego {
+    font-size: 16px;
+}
+#mesa .memotest_jugar_de_nuevo {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+#mesa .memotest_jugar_de_nuevo {
+    text-decoration: underline;
+}
+
+.clear {
+    clear: both;
+}
+
+#win_page{}
+
+#win_page .container{
+    /*background: url(images/win_bck.png) top center no-repeat;
+    background-size: 90% 100%;*/
+    height: 100%;
+}
+
+.container_doble{
+    padding-top: 10%;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.container_left{
+    width: 21%;
+    float: left;
+    margin-left: -40%;
+    margin-top: 1%;
+}
+
+.container_right{
+    width: 70%;
+    float: right;
+    margin-top: -800px;
+}
+
+.container_left img{
+    width: 100%;
+}
+.container_right img{
+    margin-left: 8%;
+    width: 68%;
+}
+
+#loose_page{
+    height: 100%;
+}
+
+#loose_page .container_right img{
+    margin-left: 4%;
+    width: 78%;
+}
+
+.jugar2_boton{
+    display: block;
+    width: 14%;
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    z-index: 9;
+}
+
+.jugar2_boton img{
+    width: 100%;
+}
+
+#countdown{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+#countdownLayer{
+    background: black;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+
+#countdownNumberContainer{
+    width: 20%;
+    margin: auto;
+}
+
+#countdownNumber{
+    width: 20%;
+    position: absolute;
+    top: 20%;
+}
+#countdownNumber img{
+    width: 100%;
+}
+
+#canvas {
+    border: 1px solid black;
+    position: absolute;
+    z-index: 10000;
+}
+
+#flake {
+    color: #fff;
+    position: absolute;
+    font-size: 25px;
+    top: -100px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!--<meta name="viewport" content="width=device-width, height=device-height">-->
+    <link rel="stylesheet" href="style.css" />
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/memotest.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.snow.min.1.0.js"></script>
+    </head>
+<body>
+
+    <div class="page_container page" id="home">
+        <a id="jugar_boton" href="javascript:;" onclick="change_page('info_page')">
+            <img src="images/jugar.png" />
+        </a>
+    </div>
+    
+    <div id="info_page" class="page_container page" style="display: none;">
+        <h1 class="pg"><img src="images/pg_logo.png" /></h1>
+        <div class="container">
+            <div id="info_page_bottom">
+                <p><img src="images/estas_listo.png" /></p>
+                <a href="javascript:;" onclick="change_page('game_page');">
+                    <img src="images/iniciar.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="game_page" class="page_container page" style="display: none;">
+        <h1 class="pg"><img src="images/pg_logo.png" /></h1>
+        <div class="container">
+            <div id="vidas">
+                <p>Tenés <span id="vidas_cant">2</span> Vidas</p> 
+                <span id="vidas_img">
+                </span>
+            </div>
+            <div id="mesa"></div>
+        </div>
+    </div>
+    
+    <div id="win_page" class="page_container page" style="display: none;">
+        <div class="container">
+            <div class="container_doble">
+                <div class="container_left">
+                    <img src="images/pg_logo.png" />
+                </div>
+                <div class="container_right">
+                    <img src="images/ganaste.png" />
+                </div>
+            </div><!--container_doble-->
+            <a class="jugar2_boton" href="javascript:;" onclick="change_page('home')">
+                <img src="images/jugar2.png" />
+            </a>
+        </div>
+    </div>
+    
+    <div id="loose_page" class="page_container page" style="display: none;">
+        <div class="container">
+            <div class="container_doble">
+                <div class="container_left">
+                    <img src="images/pg_logo.png" />
+                </div>
+                <div class="container_right">
+                    <img src="images/perdiste.png" />
+                </div>
+            </div><!--container_doble-->
+            <a class="jugar2_boton" href="javascript:;" onclick="change_page('home')">
+                <img src="images/jugar2.png" />
+            </a>
+        </div>
+    </div>
+    
+    <div id="countdown">
+        <div id="countdownLayer"></div>
+        <div id="countdownNumberContainer">
+            <div id="countdownNumber">
+                <img src="images/count_3.png" />
+            </div>
+        </div><!--countdownNumberContainer-->
+    </div>
+
+    
+    <!--audios-->
+    <audio preload="auto" id="sound_bonus">
+        <source src="sounds/bonus.mp3" type="audio/mpeg" />
+    </audio>
+    <audio preload="auto" id="sound_fail">
+        <source src="sounds/fail.mp3" type="audio/mpeg" />
+    </audio>
+    <audio preload="auto" id="sound_game_over">
+        <source src="sounds/game_over.mp3" type="audio/mpeg" />
+    </audio>
+    <audio preload="auto" id="sound_vuelta">
+        <source src="sounds/vuelta.mp3" type="audio/mpeg" />
+    </audio>
+    <audio preload="auto" id="sound_win">
+        <source src="sounds/win.mp3" type="audio/mpeg" />
+    </audio>
+    <audio preload="auto" id="sound_timer">
+        <source src="sounds/timer.wav" type="audio/mpeg" />
+    </audio>
+    
+    <div id="flake" class="flake_" ><img src="images/confetti.png" /></div>
+    
+</body>
+</html>
