@@ -32,6 +32,12 @@ function playSounds(sound_){
     media.play();
 }
 
+function playSoundsTest(sound_){
+    sound_path = sound_;
+    media = new Media(sound_path, stopSound, function(e) { console.log(e);});
+    media.play();
+}
+
 function stopSound(){}
 
 function change_page(page_){
