@@ -4,6 +4,12 @@ var t = null;
 $(document).ready(function(){
     windowsH = $(window).height();
     /*$('.page_container').height(windowsH);*/
+    
+});
+
+$(document).ready(function(){
+    alert('loaded');
+    $('#main_container').scrollTop(1).scrollTop(0);
 });
 
 function change_page(page_){
