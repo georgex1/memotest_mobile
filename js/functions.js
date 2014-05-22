@@ -1,16 +1,17 @@
 var windowsH = 0;
 var t = null;
 
-$(document).ready(function(){
+document.addEventListener("deviceready", onDeviceReady, false);
+//$(document).ready(function(){
+//    onDeviceReady();
+//});
+
+function onDeviceReady(){
     windowsH = $(window).height();
     /*$('.page_container').height(windowsH);*/
-    
-});
-
-$(document).ready(function(){
-    alert('loaded');
-    $('#main_container').scrollTop(1).scrollTop(0);
-});
+    //alert('loaded');
+    //$('#main_container').scrollTop(1).scrollTop(0);
+}
 
 function change_page(page_){
     
