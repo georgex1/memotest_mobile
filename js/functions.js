@@ -1,5 +1,7 @@
 var windowsH = 0;
 var t = null;
+var filePaht_ = '';
+var media = null;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 //$(document).ready(function(){
@@ -8,10 +10,29 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
     windowsH = $(window).height();
+    
+    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     /*$('.page_container').height(windowsH);*/
     //alert('loaded');
     //$('#main_container').scrollTop(1).scrollTop(0);
 }
+
+function gotFS(fileSystem) {
+    filePaht_ = fileSystem.root.fullPath;
+}
+function fail(){
+    console.log('fail to get filepath');
+}
+
+function playSounds(sound_){
+    src = '/android_asset/www/';
+    sound_path = src + "sounds/"+sound_;
+    media = new Media(sound_path, stopSound, function(e) { console.log(e);});
+    media.play();
+}
+
+function stopSound(){}
 
 function change_page(page_){
     
@@ -40,13 +61,17 @@ function change_page(page_){
         
         $('.page').fadeOut('500', function(){ $('#'+page_).fadeIn();});
         
-        var sound_win = document.getElementById('sound_win');
-        sound_win.pause();
-        sound_win.currentTime = 0;
+        if(media != null){
+            media.stop();
+        }
+        //var sound_win = document.getElementById('sound_win');
+        //sound_win.pause();
+        //sound_win.currentTime = 0;
         
     }else if(page_ == 'win_page'){
-        var sound_win = document.getElementById('sound_win');
-        sound_win.play();
+        playSounds('win.mp3');
+        //var sound_win = document.getElementById('sound_win');
+        //sound_win.play();
         
         $('.page').fadeOut('500', function(){ 
             $('#'+page_).show();
@@ -58,8 +83,11 @@ function change_page(page_){
         });
         
     }else if(page_ == 'loose_page'){
-        var sound_game_over = document.getElementById('sound_game_over');
-        sound_game_over.play();
+        
+        //var sound_game_over = document.getElementById('sound_game_over');
+        //sound_game_over.play();
+        
+        playSounds('game_over.mp3');
         
         $('.page').fadeOut('500', function(){
             

@@ -57,8 +57,9 @@ jQuery.fn.memotest = function(_carta_oculta, _cartas) {
         mostrarCarta: function(posicion, elemento) {
             var imagen = _this.cartas[posicion];
             elemento.fadeOut('200', function(){
-                var sound_vuelta = document.getElementById('sound_vuelta');
-                sound_vuelta.play();
+                playSounds('vuelta.mp3');
+                //var sound_vuelta = document.getElementById('sound_vuelta');
+                //sound_vuelta.play();
                 
                 if (_this.jugada === 0) {
                     elemento.find('img').attr('src', _this.cartas[posicion]);
@@ -91,10 +92,12 @@ jQuery.fn.memotest = function(_carta_oculta, _cartas) {
                     $('#countdownNumber img').attr('src', 'images/count_'+cdn+'.png');
                     //$('#countdownNumber').fadeOut('200', function(){ $('#countdownNumber').fadeOut();});
                 }
-                var sound_timer = document.getElementById('sound_timer');
-                sound_timer.pause();
-                sound_timer.currentTime = 0;
-                sound_timer.play();
+                
+                playSounds('timer.wav');
+                //var sound_timer = document.getElementById('sound_timer');
+                //sound_timer.pause();
+                //sound_timer.currentTime = 0;
+                //sound_timer.play();
             }, 1000);
             
             
@@ -112,8 +115,9 @@ jQuery.fn.memotest = function(_carta_oculta, _cartas) {
         comprobarIgualdades: function() {
             if (_this.carta1.find('img').attr('src') === _this.carta2.find('img').attr('src')) {
                 window.setTimeout(function() {
-                    var sound_bonus = document.getElementById('sound_bonus');
-                    sound_bonus.play();
+                    //var sound_bonus = document.getElementById('sound_bonus');
+                    //sound_bonus.play();
+                    playSounds('bonus.mp3');
                     
                     _this.carta1.css('opacity', 0.8);
                     _this.carta2.css('opacity', 0.8);
@@ -121,8 +125,9 @@ jQuery.fn.memotest = function(_carta_oculta, _cartas) {
                     _this.jugada = 0;
                 }, 500);
             } else {
-                var sound_fail = document.getElementById('sound_fail');
-                sound_fail.play();
+                playSounds('fail.mp3');
+                //var sound_fail = document.getElementById('sound_fail');
+                //sound_fail.play();
                 intentos -=1;
                 changeLifes(intentos);
                 if(intentos < 1){
